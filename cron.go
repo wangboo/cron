@@ -96,6 +96,12 @@ func (f FuncJob) Run() {
 	f()
 }
 
+// 测试表达式是否能用
+func TestExp(exp string) (err error) {
+	_, err = cron.Parse(exp)
+	return
+}
+
 // AddFunc adds a func to the Cron to be run on the given schedule.
 func (c *Cron) AddFunc(spec string, cmd func()) (int, error) {
 	return c.AddJob(spec, FuncJob(cmd))
