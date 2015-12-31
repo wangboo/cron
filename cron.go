@@ -98,7 +98,7 @@ func (f FuncJob) Run() {
 
 // 测试表达式是否能用
 func TestExp(exp string) (err error) {
-	_, err = cron.Parse(exp)
+	_, err = Parse(exp)
 	return
 }
 
